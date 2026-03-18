@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <title>Desafio Aceito</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <a class="link-header">Products</a>
+      <a class="link-header">Company</a>
+      <a class="link-header">Blog</a>
+      <a class="link-header">Log in</a>
+      <button class="button-header">Sign up</button>
+    </header>
+    <main>
+     <section class="container">
+        <img src="./img/(Positive) Congratulation You get 40 point for your ride.png" alt="Location For Travel" 
+          class="logo-image">
+
+      <div class="content-text">
+        <h1>Wide coverage location</h1>
+        <p>Shared rides, There’s lots to do in your city, and we’ve got the rides to help you enjoy it all. And they’re
+          all available right from your app.</p>
+        <a>Learn more</a>
+      </div>
+     </section>
+    </main>
+  </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!-- Ótimo, agora entendi melhor o layout que você quer:
+
+No desktop: imagem à esquerda e, ao lado (à direita), o título (h1), parágrafo (p) e link (a).
+
+No mobile (responsivo): esses três elementos (título, parágrafo e link) ficam em cima, e a imagem fica abaixo deles, centralizada.
+
+Como fazer isso usando Flexbox?
+Vamos usar a propriedade display: flex no container que envolve a imagem e o conteúdo textual para criar essa divisão em duas colunas no desktop, e depois empilhar verticalmente no mobile.
+
+Passo a passo para o CSS:
+Supondo que seu HTML da seção relevante seja assim (como você enviou):
+
+htmlCopiar
+<section class="container">
+  <img src="imagem.png" alt="Descrição" class="logo-image" />
+  
+  <div class="content-text">
+    <h1>Wide coverage location</h1>
+    <p>Shared rides, There’s lots to do in your city, and we’ve got the rides to help you enjoy it all. And they’re all available right from your app.</p>
+    <a href="#">Learn more</a>
+  </div>
+</section>
+Importante: Note que aqui eu coloquei o texto dentro de uma div com a classe .content-text para facilitar a organização. Se seu HTML ainda não tem, recomendo criar, pois facilita muito o controle no Flexbox.
+
+CSS para o layout:
+cssCopiar
+.container {
+  display: flex;               /* ativa Flexbox */
+  align-items: center;         /* alinha verticalmente ao centro */
+  gap: 40px;                   /* espaço entre imagem e texto */
+  max-width: 1100px;           /* largura máxima para a seção */
+  margin-left: 50px;           /* margem esquerda conforme seu layout */
+}
+
+.logo-image {
+  width: 534px;
+  height: auto;
+  flex-shrink: 0;              /* impede que encolha */
+}
+
+.content-text {
+  display: flex;
+  flex-direction: column;      /* empilha título, parágrafo e link */
+  max-width: 493px;
+}
+
+.content-text h1 {
+  font-weight: 700;
+  font-size: 62px;
+  line-height: 82px;
+  color: #161A49;
+  margin: 0;
+}
+
+.content-text p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #4B505A;
+  margin-top: 32px;
+  margin-bottom: 35px;
+}
+
+.content-text a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #6FBF44;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;    /* empilha verticalmente */
+    align-items: center;       /* centraliza */
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .logo-image {
+    order: 2;                  /* imagem fica por último */
+    width: 80%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+
+  .content-text {
+    order: 1;                  /* conteúdo textual fica primeiro */
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .content-text h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .content-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .content-text a {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+Explicando o que acontece:
+.container é o flex container que no desktop organiza a imagem e o texto lado a lado.
+
+A imagem .logo-image fica fixa na largura, sem encolher.
+
+O texto está dentro de .content-text, que empilha os elementos verticalmente.
+
+No mobile (até 900px), o .container muda para flex-direction: column, empilhando os elementos verticalmente.
+
+Usamos order para que a imagem fique por último no mobile e o texto fique primeiro.
+
+Ajustamos larguras e alinhamentos para melhor visual.
+
+Mini-desafio para você:
+Aplique esse CSS no seu projeto (lembrando de adicionar a div .content-text no HTML).
+
+Teste no navegador e redimensione para ver o efeito.
+
+Depois, tente modificar para que o link <a> fique sempre centralizado no mobile, mas alinhado à esquerda no desktop.
+
+Se quiser, posso ajudar você a ajustar seu HTML e CSS com base nesse modelo. Quer que eu faça isso?-->
